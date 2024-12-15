@@ -23,23 +23,20 @@
  lctl lmet lalt           spc            ralt rmet rctl
 )
 
-;; Graphite Anglemod Layout
-(deflayer graphite-anglemod
- @grl 1    2    3    4    5    6    7    8    9    0    [    ]    bspc
- tab  b    l    d    w    z    '    f    o    u    j    ;    =    \
- @cap n    r    t    s    g    y    h    a    e    i    ,    ret
- lsft x    m    c    v    q    p    k    .    -    /    rsft
- lctl lmet lalt           spc            ralt rmet rctl
+(defalias
+  quote  (fork ' S-- (lsft rsft)) ;; ' -> _
+  comma  (fork , S-/ (lsft rsft)) ;; , -> ?
+  hyphen (fork - S-' (lsft rsft)) ;; - -> "
+  slash  (fork / S-, (lsft rsft)) ;; / -> <
 )
 
-;; Shifted Graphite Anglemod Layer
-;; Shifted Graphite Anglemod Layer
-(deflayer graphite-anglemod-shifted
-  S-grv S-1  S-2  S-3  S-4  S-5  S-6  S-7  S-8   S-9    S-0      S-lbrc   S-rbrc  bspc
-  tab   S-b  S-l  S-d  S-w  S-z  S--  S-f  S-o   S-u    S-j      S-;      S-=     S-\
-  @cap  S-n  S-r  S-t  S-s  S-g  S-y  S-h  S-a   S-e    S-i      S-,      ret
-  lsft  S-x  S-m  S-c  S-v  S-q  S-p  S-k  S-.   S-'    S-/      rsft
-  lctl  lmet lalt           spc            ralt  rmet   rctl
+;; Graphite Anglemod Layout
+(deflayer graphite-anglemod
+ @grl 1    2    3    4    5    6      7    8    9       0      [      ]    bspc
+ tab  b    l    d    w    z    @quote f    o    u       j      ;      =    \
+ @cap n    r    t    s    g    y      h    a    e       i      @comma ret
+ lsft x    m    c    v    q    p      k    .    @hyphen @slash rsft
+ lctl lmet lalt           spc             ralt rmet rctl
 )
 
 ;; Define layer-switching aliases for clean deflayer declarations
@@ -53,11 +50,6 @@
 
  ;; Tap for Caps Lock, Hold for Ctrl
  cap (tap-hold 200 200 caps lctl)
-
- ;; Fork for shifted vs. unshifted graphite-anglemod layers
- gms (layer-switch graphite-anglemod-shifted)
- gm  (layer-switch graphite-anglemod)
- gam (fork @gms @gm (lsft rsft))
 )
 
 ;; Layer-Switching Layer
