@@ -1,4 +1,4 @@
-# graphite-anglemod-layout
+# Graphite Angle Mod Layout with PK
 Graphite Angle Mod Keyboard Layout for Kanata With PK Mod
 
 ## The PK Modification Is Present
