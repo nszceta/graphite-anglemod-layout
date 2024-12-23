@@ -1,0 +1,18 @@
+# Example configuration for systemd user unit:
+# .config/systemd/user/kanata.service 
+# Start it with:
+# systemctl --user enable kanata
+# Enable it on login with:
+# systemctl --user start kanata
+# Ensure your login user has *passwordless* sudo capability
+
+[Unit]
+Description=Kanata Service
+
+[Service]
+ExecStart=/usr/bin/sudo /usr/bin/kanata -c /full/path/to/graphite_anglemod.kbd
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
+
