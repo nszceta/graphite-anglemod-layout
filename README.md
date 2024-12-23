@@ -1,5 +1,17 @@
 # graphite-anglemod-layout
-Graphite Angle Mod Keyboard Layout for Kanata
+Graphite Angle Mod Keyboard Layout for Kanata With PK Mod
+
+## The PK Modification Is Present
+
+The original Graphite layout includes the `KP` cluster, but this version does not. 
+
+Justification:
+
+> If you swap `PK` then `PH` can be done with index-middle (and `PHY` with index-middle-index), but P will be further away from the vowels. This is probably ok on a row stagger keyboard because the bottom row is staggered to the right anyways, so swapping `P` will probably not have a major impact. On ortholinear or column-stagger keyboards, this may be more of a problem. (NOTE: Swapping PK does also help with `PY` for all the happy Python programmers out there).
+
+[Reference](https://github.com/rdavison/graphite-layout)
+
+## Installation
 
 [Load the layout configuration kbd file using Kanata](https://github.com/jtroo/kanata) to get the layout to work on all major operating systems.
 
